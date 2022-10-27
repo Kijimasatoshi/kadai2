@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/text.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>じゃんけん</title>
+    <script>
+    let gu_value = 1;
+    let choki_value = 2;
+    let par_value =3;
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>じゃんけん</h1>
+    </header>
+
+    <main>
+        <ul>
+            <li id="gu_btn">グー</li>
+            <li id="cho_btn">チョキ</li>
+            <li id="par_btn">パー</li>
+        </ul>
+        <div class="p_hands">コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+        <div id="judgment"><span id="colortype"></span></div>
+    </main>
+
+    <footer></footer>
+    <script>    
+
+
+console.log(gu_value);
+console.log(choki_value);
+console.log(par_value);
+
+
+$("#gu_btn").on("click",function(){
+
+   var random = Math.ceil(Math.random() * 3);
+   console.log(random);
+
+   let view ="相手は何を出すか";
+   if(random == 1){
+    view ='<img src="gu.png" width="300px">';
+    
+   }
+   if(random == 2){
+    view ='<img src="choki.png" width="300px">';
+   }
+   if(random == 3){
+    view ='<img src="pa.png" width="300px">';
+   }
+
+   $("#pc_hands").html(view);   
+
+
+   let judge = document.querySelector("#judgment");
+ 
+
+   if(random == 1 && gu_value == 1){
+    // judge.style.color ="#066CC";
+    judge.innerHTML ="あいこ";
+  
+   } else if (random == 2 && gu_value == 1){
+    judge.innerHTML ="あなたの勝ち"; 
+   } else if (random == 3 && gu_value == 1){
+    judge.innerHTML ="あなたの負け"; 
+   };
+
+   });
+   
+   let judge = document.querySelector("#judgment");
+   
+   if(judge == "あいこ"){ 
+    judge.style.color ="red";
+   }
+
+   $("#cho_btn").on("click",function(){
+    //このfunctionがされたときになにをされるか記述する
+   
+
+   var random = Math.ceil(Math.random() * 3);
+   console.log(random);
+
+   let view ="相手は何を出すか";
+   if(random == 1){
+    view ='<img src="gu.png" width="300px">';
+    
+   }
+   if(random == 2){
+    view ='<img src="choki.png" width="300px">';
+   }
+   if(random == 3){
+    view ='<img src="pa.png" width="300px">';
+   }
+
+   $("#pc_hands").html(view);   
+
+   let judge = document.querySelector("#judgment");
+   if(random == 2 && choki_value == 2){
+    judge.innerHTML ="あいこ"; 
+   } else if (random == 3 && choki_value == 2){
+    judge.innerHTML ="あなたの勝ち"; 
+   } else if (random == 1 && choki_value == 2){
+    judge.innerHTML ="あなたの負け"; 
+   };
+
+   });
+
+   $("#par_btn").on("click",function(){
+    //このfunctionがされたときになにをされるか記述する
+   
+
+   var random = Math.ceil(Math.random() * 3);
+   console.log(random);
+
+   let view ="相手は何を出すか";
+   if(random == 1){
+    view ='<img src="gu.png" width="300px">';
+    
+   }
+   if(random == 2){
+    view ='<img src="choki.png" width="300px">';
+   }
+   if(random == 3){
+    view ='<img src="pa.png" width="300px">';
+   }
+
+   $("#pc_hands").html(view);   
+
+   let judge = document.querySelector("#judgment");
+   if(random == 3 && par_value == 3){
+    judge.innerHTML ="あいこ"; 
+   } else if (random == 1 && par_value == 3){
+    judge.innerHTML ="あなたの勝ち"; 
+   } else if (random == 2 && par_value == 3){
+    judge.innerHTML ="あなたの負け"; 
+   };
+   });
+
+
+   
+   
+    </script>
+</body>
+
+</html>
+Footer
+© 2022 GitHub, Inc.
